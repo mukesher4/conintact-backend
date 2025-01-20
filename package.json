@@ -8,6 +8,7 @@
   "author": "Cptn. BB",
   "license": "MIT",
   "dependencies": {
+    "uuid": "^11.0.3",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
