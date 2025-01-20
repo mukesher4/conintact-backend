@@ -1,17 +1,17 @@
 // const cors = require('cors');
 const express = require("express");
 const dotenv = require("dotenv").config();
-// const errorHandler = require("./middleware/errorHandler");
-// const connectDb = require("./config/dbConnection");
+const errorHandler = require("./middleware/errorHandler");
+const connectDb = require("./config/dbConnection");
 
-// connectDb();
+connectDb();
 const app = express();
 
 // app.use(cors());
 
 const port = process.env.PORT || 5000;
 
-// app.use(express.json());
+app.use(express.json());
 
 app.get("/", (req, res) => {
 	console.log("Root route hit");
