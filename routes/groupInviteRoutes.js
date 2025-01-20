@@ -4,20 +4,17 @@ const router = express.Router();
 const validateToken = require("../middleware/validateTokenHandler");
 
 const {
-	generate, 
-	accept,
-	view,
+  generate, 
+  accept,
+  view,
 } = require("../controllers/groupInviteController");
 
 router.use(validateToken);
 
-router.route("/:inviteCode")
-	.get(accept)
+router.post("/:groupId", generate);
 
-router.route("/:groupId")
-	.post(generate);
+router.get("/:inviteCode", accept);
 
-router.route("/:inviteCode/view")
-	.get(view)
+router.get("/:inviteCode/view", view);
 
 module.exports = router;
