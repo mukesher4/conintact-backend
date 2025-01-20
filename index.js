@@ -18,14 +18,14 @@ app.get("/", (req, res) => {
 	res.send("Express on Vercel");
 });
 
-app.get("/api/sessionStatus", require("./controllers/sessionController"));
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/contacts", require("./routes/contactRoutes"));
-app.use("/api/group/user", require("./routes/groupUserRoutes"));
-app.use("/api/group", require("./routes/groupContactRoutes"));
-app.use("/api/invite", require("./routes/groupInviteRoutes"))
+// app.get("/api/sessionStatus", require("./controllers/sessionController"));
+// app.use("/api/users", require("./routes/userRoutes"));
+// app.use("/api/contacts", require("./routes/contactRoutes"));
+// app.use("/api/group/user", require("./routes/groupUserRoutes"));
+// app.use("/api/group", require("./routes/groupContactRoutes"));
+// app.use("/api/invite", require("./routes/groupInviteRoutes"))
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
