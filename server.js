@@ -22,6 +22,7 @@ app.use("/api/invite", require("./routes/groupInviteRoutes"))
 
 app.use(errorHandler);
 
-app.listen(port, () => {
-	console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+// 	console.log(`Server running on port ${port}`);
+// });
+module.exports = app;
