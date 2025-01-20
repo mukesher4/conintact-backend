@@ -1,33 +1,20 @@
-const cors = require('cors');
 const express = require("express");
-const dotenv = require("dotenv").config();
-const errorHandler = require("./middleware/errorHandler");
-const connectDb = require("./config/dbConnection");
 
-connectDb();
 const app = express();
 
-// app.use(cors());
-
-const port = process.env.PORT || 5000;
-
-app.use(express.json());
+console.log("Starting the app...");
 
 app.get("/", (req, res) => {
-	console.log("Root route hit");
-	res.json("Express on Vercel");
+  console.log("Root route hit");
+  res.send("Express on Vercel");
 });
 
-app.get("/api/sessionStatus", require("./controllers/sessionController"));
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/contacts", require("./routes/contactRoutes"));
-app.use("/api/group/user", require("./routes/groupUserRoutes"));
-app.use("/api/group", require("./routes/groupContactRoutes"));
-app.use("/api/invite", require("./routes/groupInviteRoutes"))
-
-app.use(errorHandler);
+// Use dynamic port
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-	console.log(`Server running on port ${port}`);
+  console.log(`Running on port ${port}.`);
 });
+
+// Export the Express API
 module.exports = app;
