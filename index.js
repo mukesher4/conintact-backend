@@ -4,7 +4,7 @@ const dotenv = require("dotenv").config();
 const errorHandler = require("./middleware/errorHandler");
 const connectDb = require("./config/dbConnection");
 
-connectDb();
+// connectDb();
 const app = express();
 
 app.use(cors());
