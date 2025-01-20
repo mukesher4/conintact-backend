@@ -86,7 +86,7 @@ const view = asyncHandler(async(req, res) => {
 });
 
 module.exports = {
-	generate,
+	// generate,
 	accept,
 	view,
 };
