@@ -13,6 +13,11 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
+app.get("/api", (req, res) => {
+	console.log("Root route hit");
+	res.send("Express on Vercel");
+});
+
 app.get("/api/sessionStatus", require("./controllers/sessionController"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/contacts", require("./routes/contactRoutes"));
