@@ -7,25 +7,25 @@ const connectDb = require("./config/dbConnection");
 // connectDb();
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 
 const port = process.env.PORT || 5000;
 
-app.use(express.json());
+// app.use(express.json());
 
 app.get("/", (req, res) => {
 	console.log("Root route hit");
-	res.json("Express on Vercel");
+	res.send("Express on Vercel");
 });
 
-app.get("/api/sessionStatus", require("./controllers/sessionController"));
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/contacts", require("./routes/contactRoutes"));
-app.use("/api/group/user", require("./routes/groupUserRoutes"));
-app.use("/api/group", require("./routes/groupContactRoutes"));
-app.use("/api/invite", require("./routes/groupInviteRoutes"))
+// app.get("/api/sessionStatus", require("./controllers/sessionController"));
+// app.use("/api/users", require("./routes/userRoutes"));
+// app.use("/api/contacts", require("./routes/contactRoutes"));
+// app.use("/api/group/user", require("./routes/groupUserRoutes"));
+// app.use("/api/group", require("./routes/groupContactRoutes"));
+// app.use("/api/invite", require("./routes/groupInviteRoutes"))
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
